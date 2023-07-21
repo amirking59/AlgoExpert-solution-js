@@ -47,6 +47,14 @@ function remove(root, value) {
   return root
 }
 
+function inorder(root) {
+  if (root === null) return null
+
+  inorder(root.left)
+  console.log(root.value)
+  inorder(root.right)
+}
+
 
 const root = new Node(12)
 
@@ -57,6 +65,6 @@ insert(root, 1)
 insert(root, 15)
 insert(root, 11)
 
-console.log(root)
+console.log(inorder(root))
 remove(root, 8)
-console.log(root)
+console.log(inorder(root))
